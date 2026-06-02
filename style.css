@@ -1,0 +1,60 @@
+/* Reset some browser defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #ffffff;
+  color: #313030;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  
+}
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  margin-bottom: 60px;
+  font-family: Georgia, serif;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+header p {
+  color: #888;
+  font-size: 16px;
+}
+
+/* Sections */
+section {
+  margin-bottom: 60px;
+}
+
+h2 {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #aaa;
+  margin-bottom: 16px;
+}
+
+p {
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+ul {
+  list-style-type: circle;
+  padding-left: 20px;
+  margin-top: 10px;
+}
