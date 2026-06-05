@@ -35,6 +35,23 @@ const tips = [
   "how to use repitition well",
   "how to use repitition well",
   "how to pull off a propeller hat",
+  "flipper zero",
+  "typeography",
+  "how to use the swiss style correctly",
+  "maximalism",
+  "minimalism",
+  "gcse maths",
+  "tripple science at gcse",
+  "how to set up a debrid service",
+  "how torrenting works",
+  "vpns in general",
+  "an advanced understanding of how the us legal system works",
+  "an advanced understanding of how the uk legal system works",
+  "the king in yellow",
+  "way too many scps",
+  "jamie paige lore",
+  "basicly every jamie paige lyric",
+  "NOT PHYSICS",
 ];
 
 function shuffle(array) {
