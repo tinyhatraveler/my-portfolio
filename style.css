@@ -1,0 +1,85 @@
+/* Reset some browser defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #ffffff;
+  color: #313030;
+  body {
+  font-family: 'Lato', sans-serif;
+  background-color: #ffffff;
+  color: #313030;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  min-height: 100vh;
+  padding: 60px 30px;
+  border-right: 1px solid #eee;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.content {
+  margin-left: 220px;
+  padding: 60px 60px;
+  max-width: 650px;
+}
+  
+}
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  margin-bottom: 60px;
+  font-family: Georgia, serif;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+header p {
+  color: #888;
+  font-size: 16px;
+}
+
+/* Sections */
+section {
+  margin-bottom: 60px;
+}
+
+h2 {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #aaa;
+  margin-bottom: 16px;
+}
+
+p {
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+ul {
+  list-style-type: circle;
+  padding-left: 20px;
+  margin-top: 10px;
+}
