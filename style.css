@@ -49,6 +49,14 @@ header {
   font-family: Georgia, serif;
 }
 
+a { //for links
+  color: #022c86; 
+  text-decoration: none;
+  border-bottom: 1px solid currentColor; 
+  font-family: "Source Code Pro", monospace;
+
+}
+
 h1 {
   font-size: 36px;
   font-weight: bold;
@@ -78,6 +86,14 @@ p {
   font-size: 16px;
 }
 
+
+
+a:hover {
+  color: #0f4a22; /* slightly darker on hover */
+  border-bottom-color: transparent;
+  font-family: 'Lato', ;
+}
+
 .subtitle {
   color: #aaa;
   font-size: 15px;
@@ -104,4 +120,29 @@ ul {
 
 #search:focus {
   border-bottom-color: #222;
+}
+
+.status {
+  font-size: 0.7em;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.status.finished {
+  background-color: #d4f4dd;
+  color: #1e6b34;
+}
+
+.status.updating {
+  background-color: #cde3ff;
+  color: #005c8a;
+}
+
+.status.abandoned {
+  background-color: #f8d7da;
+  color: #842029;
 }
