@@ -52,6 +52,19 @@ const tips = [
   "jamie paige lore",
   "basicly every jamie paige lyric",
   "NOT PHYSICS",
+  "how to ski",
+  "bikeability level 1",
+  "grade 3 guitar",
+  "how vocal synths work",
+  "the symptoms of ADHD",
+  "how to play roblox grace (rest in peak)",
+  "harry potter pupet palls",
+  "the mess that is the lore of futurama",
+  "how to debate someone",
+  "how to play devils advocate",
+  "how thought can affect random chance",
+  "how to focssil hunt",
+  "air hockey",
 ];
 
 function shuffle(array) {
@@ -63,13 +76,16 @@ const search = document.getElementById("search");
 
 function renderList(filter = "") {
   list.innerHTML = "";
-  tips
-    .filter(tip => tip.toLowerCase().includes(filter.toLowerCase()))
-    .forEach(tip => {
-      const li = document.createElement("li");
-      li.textContent = tip;
-      list.appendChild(li);
-    });
+  const filtered = tips.filter(tip => tip.toLowerCase().includes(filter.toLowerCase()));
+
+  const count = filtered.length;
+  document.getElementById("result-count").textContent = count === 1 ? "1 result" : `${count} results`;
+
+  filtered.forEach(tip => {
+    const li = document.createElement("li");
+    li.textContent = tip;
+    list.appendChild(li);
+  });
 }
 
 search.addEventListener("input", () => {
