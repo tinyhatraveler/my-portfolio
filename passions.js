@@ -3,14 +3,23 @@
 // ============================================================
 // Add new items here. Each one needs:
 //   name         - shown in the clickable list
-//   description  - shown on the right when clicked. This is plain
+//   description  - (optional) shown on the right when clicked. Plain
 //                  HTML, so you can mix in tags anywhere you like:
-//                    <strong>, <em>, <a>, <br> for text formatting
-//                    <img src="images/whatever.jpg"> to drop in a photo
-//                  Since it's just HTML, an <img> tag can go at the
-//                  start, the end, or right in the middle of a
-//                  sentence - wherever you want the image to sit
-//                  relative to the text around it.
+//                    <p>...</p>          paragraph, adds space after it
+//                    <strong>, <em>, <a>, <br>
+//                    <img src="images/whatever.jpg">
+//                    <iframe src="...">  YouTube embed
+//   children     - (optional) an array of more items nested underneath
+//                  this one, same shape as this one - as deep as you
+//                  like. Use this for things like:
+//                    Jamie Paige > Flavour Foley > Static
+//
+// A "folder" (something with children) can ALSO have its own
+// description - clicking it both shows that description AND expands
+// to reveal what's nested inside.
+//
+// The order you list things in is the order they'll appear - nothing
+// gets shuffled, so this array doubles as your sort order.
 //
 // To add a new item, copy one of the objects below, paste it as a
 // new line, and change the values. Don't forget the comma at the
@@ -24,28 +33,44 @@ const passions = [
   },
   {
     name: 'Jamie Paige',
-    description: `<p>my favourite music artist ever and also one of my favourite things to reference. She makes music mostly using vocal synths a very cool piece of technology covered more in the teto section. </p> <p>It's unfortunately been a hot second since the last solo song she released but she's been releasing bangers with her band (flavour foley) so its worth it. </p> <p>my favourites are: connect commune, static (both by the band), birdbrain, and your telling me a shrimp fried this rice. </p>. <p> One of the main reasons I like her music is its complexity. she uses a lot of motifs in her work, as well as lots of common (or meme) phrases. birdbrain is a song of the phrase running around like a chicken with its head cut off, rot for clout is number go up. while connect commune's base line (i think) is Morse code for the word connect.</p> <p> she also has the previously mentioned motifs, she uses them for recuring characters or themes (wow really). they are usually stuck to one album but do sometimes spread around (see birdbrain and when spring comes. or literally anything post 2024 and dyad) </p> <p> I'm personally a big fan of the themes a lot of her work has and also how they are so varied yet familiar, if anyone wanted to listen I could probably talk for hours about her entire library. </p> <p> wow thats a lot of text lol</p> <iframe src="https://www.youtube.com/embed/0iVlSNpq8i8" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+    description: `<p>my favourite music artist ever and also one of my favourite things to reference. She makes music mostly using vocal synths a very cool piece of technology covered more in the teto section. </p> It's unfortunately been a hot second since the last solo song she released but she's been releasing bangers with her band (flavour foley) so its worth it. </p> <p>my favourites are: connect commune, static (both by the band), birdbrain, and your telling me a shrimp fried this rice. </p>. <p> One of the main reasons I like her music is its complexity. she uses a lot of motifs in her work, as well as lots of common (or meme) phrases. birdbrain is a song of the phrase running around like a chicken with its head cut off, rot for clout is number go up. while connect commune's base line (i think) is Morse code for the word connect.</p> <p> she also has the previously mentioned motifs, she uses them for recuring characters or themes (wow really). they are usually stuck to one album but do sometimes spread around (see birdbrain and when spring comes. or literally anything post 2024 and dyad) </p> <p> I'm personally a big fan of the themes a lot of her work has and also how they are so varied yet familiar, if anyone wanted to listen I could probably talk for hours about her entire library. </p> <p> wow thats a lot of text lol</p> <iframe src="https://www.youtube.com/embed/0iVlSNpq8i8" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+    children: [
+      {
+        name: 'Flavour Foley',
+        description: `<p>placeholder for flavour foley notes. I will add more here later.</p>`,
+        children: [
+          {
+            name: 'Static',
+            description: `<p>[Add your notes on Static here - move the relevant bit out of the Flavour Foley text above if you want it to live specifically here instead.]</p>`
+          },
+          {
+            name: 'Connect Commune',
+            description: `<p>[Add your notes on Connect Commune here - e.g. the Morse code bassline detail currently sits in the Flavour Foley text above.]</p>`
+          }
+        ]
+      }
+    ]
   },
-  {
-    name: 'Teto Kasane',
-    description: "The Red One"
-  },
-  {
-    name: 'Team Fortress 2',
-    description: "Dr sex is invincble we cant stop him."
-  },
-  {
-    name: 'Futurama',
-    description: "40% peak"
-  },
-  {
-    name: 'SCP Foundation',
-    description: "the bucket that kills you"
-  },
-  {
-    name: 'Gravity Falls',
-    description: "that god damned triangle."
-  }
+  //{
+  //  name: 'Teto Kasane',
+  //  description: "The Red One"
+  //},
+ // {
+ //   name: 'Team Fortress 2',
+ //   description: "Dr sex is invincble we cant stop him."
+ // },
+ // {
+ //   name: 'Futurama',
+ //   description: "40% peak"
+ // },
+ // {
+ //   name: 'SCP Foundation',
+ //   description: "the bucket that kills you"
+ // },
+ // {
+ //   name: 'Gravity Falls',
+ //   description: "that god damned triangle."
+ // }
 ];
 
 
@@ -68,44 +93,109 @@ const passions = [
 
 
 // ============================================================
-// BUILD THE LIST
+// BUILD THE TREE
 // ============================================================
-// Turns the (now shuffled) array above into actual <li> elements
-// on the page. Each item's data lives on the element itself via
-// dataset, so we can read it back out again on click.
+// Recursively turns the array (and any nested `children` arrays)
+// into nested <ul><li> elements. Anything with children gets a small
+// triangle you can click to expand/collapse it. Items with no
+// children just render as a plain clickable row, same as before.
 const listElement = document.getElementById('knowledge-list');
-
-passions.forEach(function (passion, index) {
-  const li = document.createElement('li');
-  li.textContent = passion.name;
-  li.dataset.index = index;   // remembers which passion this <li> maps to
-  listElement.appendChild(li);
-});
-
-
-// ============================================================
-// CLICK + SEARCH BEHAVIOUR
-// ============================================================
-const listItems = document.querySelectorAll('#knowledge-list li');
 const detailPanel = document.getElementById('knowledge-detail');
-const searchInput = document.getElementById('search');
 
-listItems.forEach(function (item) {
-  item.addEventListener('click', function () {
-    const passion = passions[item.dataset.index];
+function buildTree(nodes, container) {
+  nodes.forEach(function (node) {
+    const li = document.createElement('li');
+    li.classList.add('tree-item');
 
-    detailPanel.innerHTML = '<p>' + passion.description + '</p>';
+    // The clickable row: triangle (if it has children) + name
+    const row = document.createElement('div');
+    row.classList.add('tree-row');
 
-    listItems.forEach(function (i) { i.classList.remove('active'); });
-    item.classList.add('active');
+    const hasChildren = Array.isArray(node.children) && node.children.length > 0;
+
+    if (hasChildren) {
+      const arrow = document.createElement('span');
+      arrow.classList.add('tree-arrow');
+      arrow.textContent = '▸';
+      row.appendChild(arrow);
+    }
+
+    const label = document.createElement('span');
+    label.textContent = node.name;
+    row.appendChild(label);
+
+    li.appendChild(row);
+
+    // If this node has children, build their <ul> now (hidden until expanded)
+    let childList = null;
+    if (hasChildren) {
+      childList = document.createElement('ul');
+      childList.classList.add('tree-children');
+      buildTree(node.children, childList);
+      li.appendChild(childList);
+    }
+
+    // Clicking the row shows the description (if there is one)
+    // and expands/collapses the children (if there are any)
+    row.addEventListener('click', function () {
+      if (node.description) {
+        detailPanel.innerHTML = node.description;
+
+        document.querySelectorAll('.tree-row.active').forEach(function (r) {
+          r.classList.remove('active');
+        });
+        row.classList.add('active');
+      }
+
+      if (hasChildren) {
+        li.classList.toggle('expanded');
+      }
+    });
+
+    container.appendChild(li);
   });
-});
+}
+
+buildTree(passions, listElement);
+
+
+// ============================================================
+// SEARCH
+// ============================================================
+// Hides any item whose name doesn't match, at any depth. If a nested
+// item matches, its parent folders are automatically expanded and
+// kept visible too, so you can actually see the match.
+const searchInput = document.getElementById('search');
 
 searchInput.addEventListener('input', function () {
   const query = searchInput.value.toLowerCase();
+  const allItems = listElement.querySelectorAll('.tree-item');
 
-  listItems.forEach(function (item) {
-    const matches = item.textContent.toLowerCase().includes(query);
-    item.classList.toggle('hidden', !matches);
+  if (query === '') {
+    // Nothing typed: show everything, collapse back to the top level
+    allItems.forEach(function (li) {
+      li.classList.remove('hidden');
+      li.classList.remove('expanded');
+    });
+    return;
+  }
+
+  allItems.forEach(function (li) {
+    const name = li.querySelector('.tree-row span:last-child').textContent.toLowerCase();
+    const matches = name.includes(query);
+    li.classList.toggle('hidden', !matches);
+  });
+
+  // Walk back up from every match and make sure its parent folders
+  // are visible and expanded, so the match is actually reachable.
+  allItems.forEach(function (li) {
+    if (!li.classList.contains('hidden')) {
+      let parentLi = li.parentElement.closest('.tree-item');
+      while (parentLi) {
+        parentLi.classList.remove('hidden');
+        parentLi.classList.add('expanded');
+        parentLi = parentLi.parentElement.closest('.tree-item');
+      }
+    }
   });
 });

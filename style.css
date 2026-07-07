@@ -274,19 +274,48 @@ ul {
   margin-top: 0;
 }
 
-.knowledge-list li {
+/* Every nested <ul> (a folder's children) gets indented and starts
+   collapsed - only shown once its parent .tree-item has .expanded */
+.knowledge-list .tree-children {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 0;
+  display: none;
+}
+
+.tree-item.expanded > .tree-children {
+  display: block;
+}
+
+.tree-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   padding: 10px 4px;
   border-bottom: 1px solid #eee;
   cursor: pointer;
 }
 
-.knowledge-list li:hover,
-.knowledge-list li.active {
+.tree-row:hover,
+.tree-row.active {
   background-color: #fafafa;
 }
 
-.knowledge-list li.hidden {
-  display: none;         /* used by the search filter below */
+/* The small triangle shown next to anything with children.
+   Rotates from ▸ to ▾ when its item is expanded. */
+.tree-arrow {
+  display: inline-block;
+  font-size: 10px;
+  color: #aaa;
+  transition: transform 0.15s ease;
+}
+
+.tree-item.expanded > .tree-row .tree-arrow {
+  transform: rotate(90deg);
+}
+
+.tree-item.hidden {
+  display: none;         /* used by the search filter */
 }
 
 .knowledge-detail-panel img {
