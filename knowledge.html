@@ -1,35 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Those Who Know</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
+<head>
+<meta charset="UTF-8">
+<title>Passions - Luca Hawes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
 
-      <aside class="sidebar">
-        <h1>Luca Hawes</h1>
-        <nav>
-          <p>Designer</p>
-          <p>Gamer</p>
-          <p>Procrastinator</p>
-        </nav>
-      </aside>
+<body>
 
-      <main class="content">
-        <h1>Knowledge Base</h1>
-        <a href="index.html">< Back</a>
-        <p>A list of everything I can remember knowing "frequently" updated.</p>
-        <em><p class="subtitle">if you want to ask me any questions about any of these subjects please email me I love to rant :p</p></em>
-        <input type="text" id="search" placeholder="Search..." />
-        <p id="result-count"></p>
+<div class="container">
 
-        <ul id="knowledge-list">
-        </ul>
-      </main>
+  <!-- ===== SIDEBAR (same as homepage) ===== -->
+  <div class="sidebar">
+    <header>
+      <h1>Luca Hawes</h1>
+      <p>Designer</p>
+      <p>Gamer</p>
+      <p>Perfectionist</p>
+    </header>
+  </div>
+
+  <!-- ===== MAIN CONTENT: two panels side by side ===== -->
+  <div class="content knowledge-content">
+
+    <!-- LEFT PANEL: title, description, search, list -->
+    <div class="knowledge-list-panel">
+
+      <a href="index.html" class="back-link">&lt; Back</a>
+
+      <h1>Passions</h1>
+      <p class="subtitle">A "short" list of things that I am passionate or just am knowledgeable about. It was going to be sorted but I didn't understand it and gave up</p>
+
+      <input type="text" id="search" placeholder="Search...">
+
+      <ul class="knowledge-list" id="knowledge-list">
+        <!-- List items are generated automatically from the array in the script below -->
+      </ul>
 
     </div>
-    <script src="knowledge.js"></script>
-  </body>
+
+    <!-- RIGHT PANEL: expanded description, updated by clicking a list item -->
+    <div class="knowledge-detail-panel" id="knowledge-detail">
+      <p>Select something from the list to read more about it.</p>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="passions.js"></script>
+
+</body>
 </html>
