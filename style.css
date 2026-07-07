@@ -97,7 +97,7 @@ p {
 }
 
 .subtitle {
-  color: #313030;
+  color: #aaa;
   font-size: 15px;
   margin-bottom: 32px;
 }
@@ -145,11 +145,6 @@ ul {
   color: #1e6b34;
 }
 
-.status.paused {
-  background-color: #f8d7da;
-  color: #ed7014;
-}
-
 .status.updating {
   background-color: #cde3ff;
   color: #005c8a;
@@ -187,10 +182,6 @@ ul {
    .project-card div itself, same as the .status span. */
 .project-card.finished {
   border-color: #1e6b34;
-}
-
-.project-card.paused {
-  border-color: #ed7014;
 }
 
 .project-card.updating {
@@ -303,4 +294,21 @@ ul {
   border-radius: 8px;
   display: block;
   margin: 16px 0;   /* breathing room above and below, wherever it sits in the text */
+}
+
+.knowledge-detail-panel p {
+  margin-bottom: 16px;   /* space between paragraphs (removed by the reset at the top of this file) */
+}
+
+.knowledge-detail-panel p:last-child {
+  margin-bottom: 0;      /* no dangling space after the final paragraph */
+}
+
+.knowledge-detail-panel iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* keeps the widescreen shape at any width */
+  border: none;
+  border-radius: 8px;
+  display: block;
+  margin: 16px 0;
 }
