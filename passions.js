@@ -24,7 +24,7 @@ const passions = [
   },
   {
     name: 'Jamie Paige',
-    description: "Baby do you know what you want to hear?"
+    description: "<p>my favourite music artist ever and also one of my favourite things to reference. She makes music mostly using vocal synths a very cool piece of technology covered more in the teto section. </p> <p>It's unfortunately been a hot second since the last solo song she released but she's been releasing bangers with her band (flavour foley) so its worth it. </p> <p>my favourites are: connect commune, static (both by the band), birdbrain, and your telling me a shrimp fried this rice. </p>. <p> One of the main reasons I like her music is its complexity. she uses a lot of motifs in her work, as well as lots of common (or meme) phrases. birdbrain is a song of the phrase running around like a chicken with its head cut off, rot for clout is number go up. while connect commune's base line (i think) is Morse code for the word connect.</p> <p> she also has the previously mentioned motifs, she uses them for recuring characters or themes (wow really). they are usually stuck to one album but do sometimes spread around (see birdbrain and when spring comes. or literally anything post 2024 and dyad) </p> <p> I'm personally a big fan of the themes a lot of her work has and also how they are so varied yet familiar, if anyone wanted to listen I could probably talk for hours about her entire library. </p> <p> wow thats a lot of text lol</p> "
   },
   {
     name: 'Teto Kasane',
