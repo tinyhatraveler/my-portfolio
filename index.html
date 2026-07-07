@@ -1,52 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+<head>
+<meta charset="UTF-8">
+<title>Your Name - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    
-  </head>
-  <body>
-    <div class="container">
 
-      <aside class="sidebar">
-        <h1>Luca Hawes</h1> 
-        <nav>
-          <p>Designer</p>
-          <p>Gamer</p>
-          <p>Procrastinator</p>
-        </nav>
-      </aside>
 
-      <main class="content">
+</head>
 
-        <section id="skills">
-          <h2>Skills</h2>
-          <ul>
-            <li>Design</li>
-            <li>Composition</li>
-            <li>Photoshop</li>
-            <li>Typography</li>
-            <li>UI & UX Design</li>
-             <a href="knowledge.html">see more things i know here!</a>
-          </ul>
-        </section>
+<body>
 
-        <section id="projects">
-          <h2><a href="projects.html">Projects</a></h2>
-          <p>my current project is a tracker that keeps track of my progress. its basicly the worlds most convoluted todo list.</p>
-        </section>
+<div class="container">
 
-        <section id="contact">
-          <h2>Contact</h2>
-          <p>Email me at: me@dillydallying.dev</p>
-        </section>
+  <!-- ===== SIDEBAR ===== -->
+  <div class="sidebar">
+    <header>
+      <h1>Luca Hawes</h1>
+      <p>Designer</p>
+      <p>Gamer</p>
+      <p>Perfectionist</p>
+    </header>
+  </div>
 
-      </main>
+  <!-- ===== MAIN CONTENT ===== -->
+  <div class="content">
 
-    </div>
-  </body>
+    <!-- SKILLS -->
+    <section>
+      <h2>Passions</h2>
+      <p>A "short" list of things that I am passionate or just am knowledgeable about.</p>
+      <a href="knowledge.html">see them here</a>
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+      <h2>Projects</h2>
+
+      <div class="projects-grid">
+
+        <a href="projects/notible-progress-tracker.html" class="project-card finished">
+          <h3>Notible Progress Tracker</h3>
+          <p>A way to visualise the progress of a project with set steps.</p>
+          <span class="status finished">Finished</span>
+        </a>
+
+        <a href="projects/this-website.html" class="project-card updating">
+          <h3>This Website</h3>
+          <p>Something to stop me from getting bored</p>
+          <span class="status updating">Updating</span>
+        </a>
+
+        <a href="projects/project-three.html" class="project-card abandoned">
+          <h3>Discord Profile Widget</h3>
+          <p>A widget on my profile that displays my last.fm scrobbles.</p>
+          <span class="status abandoned">Abandoned</span>
+        </a>
+
+        <a href="projects/project-four.html" class="project-card updating">
+          <h3>Real Project</h3>
+          <p>I needed 4 because i wanted it to be a 2x2 but i havent got a 4th one yet</p>
+          <span class="status updating">Placeholder</span>
+        </a>
+
+      </div>
+
+      <a href="projects.html">See Them All!</a>
+    </section>
+
+    <!-- REFERENCES -->
+    <section>
+      <h2>References</h2>
+      <p>Tools, articles and people I like to point back to.</p>
+      <a href="references.html">See references</a>
+    </section>
+
+    <!-- CONTACT -->
+    <section>
+      <h2>Contact</h2>
+      <p>you can email me at "me@dillydallying.dev/"</p>
+    </section>
+
+  </div>
+
+</div>
+
+</body>
 </html>
