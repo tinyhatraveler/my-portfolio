@@ -145,6 +145,11 @@ ul {
   color: #1e6b34;
 }
 
+.status.paused {
+  background-color: #f8d7da;
+  color: #ed7014;
+}
+
 .status.updating {
   background-color: #cde3ff;
   color: #005c8a;
@@ -182,6 +187,10 @@ ul {
    .project-card div itself, same as the .status span. */
 .project-card.finished {
   border-color: #1e6b34;
+}
+
+.project-card.paused {
+  border-color: #ed7014;
 }
 
 .project-card.updating {
