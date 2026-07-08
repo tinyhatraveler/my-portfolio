@@ -45,7 +45,7 @@ const passions = [
         },
         {
          name: 'Flavour Foley',
-         description: `<p>placeholder for flavour foley notes. I will add more here later.</p>`,
+         description: `<p>i love flavour foley for the same reasons i love jamie page, mostly because they all work off eachother so well. i dont have anything more to say that isnt song specific, so go look at those!</p>`,
          children: [
            {
              name: 'Static',
