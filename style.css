@@ -341,3 +341,14 @@ ul {
   display: block;
   margin: 16px 0;
 }
+
+/* Brief highlight flash when landing directly on a linked item,
+   e.g. visiting references.html#mdn-web-docs */
+.tree-row.jump-highlight {
+  animation: jumpFlash 2s ease;
+}
+
+@keyframes jumpFlash {
+  from { background-color: #fff3b0; }
+  to { background-color: transparent; }
+}

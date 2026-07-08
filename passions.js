@@ -103,109 +103,15 @@ const passions = [
 
 
 // ============================================================
-// BUILD THE TREE
+// RUN IT
 // ============================================================
-// Recursively turns the array (and any nested `children` arrays)
-// into nested <ul><li> elements. Anything with children gets a small
-// triangle you can click to expand/collapse it. Items with no
-// children just render as a plain clickable row, same as before.
-const listElement = document.getElementById('knowledge-list');
-const detailPanel = document.getElementById('knowledge-detail');
-
-function buildTree(nodes, container) {
-  nodes.forEach(function (node) {
-    const li = document.createElement('li');
-    li.classList.add('tree-item');
-
-    // The clickable row: triangle (if it has children) + name
-    const row = document.createElement('div');
-    row.classList.add('tree-row');
-
-    const hasChildren = Array.isArray(node.children) && node.children.length > 0;
-
-    if (hasChildren) {
-      const arrow = document.createElement('span');
-      arrow.classList.add('tree-arrow');
-      arrow.textContent = '▸';
-      row.appendChild(arrow);
-    }
-
-    const label = document.createElement('span');
-    label.textContent = node.name;
-    row.appendChild(label);
-
-    li.appendChild(row);
-
-    // If this node has children, build their <ul> now (hidden until expanded)
-    let childList = null;
-    if (hasChildren) {
-      childList = document.createElement('ul');
-      childList.classList.add('tree-children');
-      buildTree(node.children, childList);
-      li.appendChild(childList);
-    }
-
-    // Clicking the row shows the description (if there is one)
-    // and expands/collapses the children (if there are any)
-    row.addEventListener('click', function () {
-      if (node.description) {
-        detailPanel.innerHTML = node.description;
-
-        document.querySelectorAll('.tree-row.active').forEach(function (r) {
-          r.classList.remove('active');
-        });
-        row.classList.add('active');
-      }
-
-      if (hasChildren) {
-        li.classList.toggle('expanded');
-      }
-    });
-
-    container.appendChild(li);
-  });
-}
-
-buildTree(passions, listElement);
-
-
-// ============================================================
-// SEARCH
-// ============================================================
-// Hides any item whose name doesn't match, at any depth. If a nested
-// item matches, its parent folders are automatically expanded and
-// kept visible too, so you can actually see the match.
-const searchInput = document.getElementById('search');
-
-searchInput.addEventListener('input', function () {
-  const query = searchInput.value.toLowerCase();
-  const allItems = listElement.querySelectorAll('.tree-item');
-
-  if (query === '') {
-    // Nothing typed: show everything, collapse back to the top level
-    allItems.forEach(function (li) {
-      li.classList.remove('hidden');
-      li.classList.remove('expanded');
-    });
-    return;
-  }
-
-  allItems.forEach(function (li) {
-    const name = li.querySelector('.tree-row span:last-child').textContent.toLowerCase();
-    const matches = name.includes(query);
-    li.classList.toggle('hidden', !matches);
-  });
-
-  // Walk back up from every match and make sure its parent folders
-  // are visible and expanded, so the match is actually reachable.
-  allItems.forEach(function (li) {
-    if (!li.classList.contains('hidden')) {
-      let parentLi = li.parentElement.closest('.tree-item');
-      while (parentLi) {
-        parentLi.classList.remove('hidden');
-        parentLi.classList.add('expanded');
-        parentLi = parentLi.parentElement.closest('.tree-item');
-      }
-    }
-  });
+// All the actual list-building, click, search, and deep-link
+// behaviour lives in tree-view.js (shared with the References page)
+// so it isn't duplicated here. This just tells it which data and
+// which elements on THIS page to use.
+initTreeView({
+  data: passions,
+  listElementId: 'knowledge-list',
+  detailElementId: 'knowledge-detail',
+  searchElementId: 'search'
 });
