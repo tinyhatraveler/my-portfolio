@@ -58,7 +58,27 @@ const passions = [
           ]
         }
       ]
+    },
+    {
+      name: 'second music artist here',
+      description: `description!`,
+      children: [ ]
     }
+    ]
+  },
+  {
+    name: 'series',
+    description: "stuff that isnt a movie you know?",
+    children: [
+      {
+        name: 'The Amazing Digital Circus',
+        description: `<p>the amazing digital circus is a brilliant example of indie animation, the pilot alone sitting at as many views as mr beast has subscribers.</p>
+        <p>though the fandom is HORRIBLE (probably worse than your thinking). it is quite great for such a rushed project from gooseworx.</p>
+        <p>I love all the characters, esspeicaly kinger. i do relate to jax a worrying ammount, to the point that they have their own section. </p>
+        <p>I love tadcs humor, the stupid gags, the fourth wall breaks, the entire pilot. the timing is perfect, and it knows when its time to be serious </p>
+        <p>speaking of being serious, i esspecialy love the soundtrack. tracks like "someone real" and "your new home" do a great job of setting a mood. and songs like "digital days" are just genuine absolute bangers. as someone who LOVES a motif, the ammount that are included definetly adds to my deep love for the shows soundtrack. for more specific stuff see the stuff ive written about jax and episode 9 as a hole, havent written it yet i just KNOW im going to go off about it lol.</p>`,
+        children: [ ]
+      },
     ]
   },
   //{
