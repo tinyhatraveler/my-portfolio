@@ -212,7 +212,8 @@ ul {
 }
 
 fancy {
-  font-family: Georgia, serif;
+  font-weight: 500;
+  font-family: "Source Serif 4", Georgia, serif;
 }
 
 /* ---------- RESPONSIVE ---------- */
