@@ -38,7 +38,7 @@ html {
 .content {
   margin-left: 220px;   /* leaves room for the fixed sidebar */
   padding: 60px 60px;
-  max-width: 650px;
+  max-width: 1100px;   /* was 650px - widened so text uses more of the screen on wide monitors */
 }
 
 
