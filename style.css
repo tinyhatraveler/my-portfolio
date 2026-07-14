@@ -211,6 +211,9 @@ ul {
   line-height: 1.5;
 }
 
+fancy {
+  font-family: Georgia, serif;
+}
 
 /* ---------- RESPONSIVE ---------- */
 
