@@ -61,6 +61,28 @@ header p {
 }
 
 
+/* ---------- SIDEBAR NAV (page list) ---------- */
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* The current page: looks like plain text instead of a link,
+   since clicking it wouldn't do anything useful anyway. */
+.sidebar-nav a.active {
+  color: #313030;
+  border-bottom-color: transparent;
+  cursor: default;
+  pointer-events: none;
+}
+
+.sidebar-nav a.active:hover {
+  background-color: transparent;
+}
+
+
 /* ---------- LINKS ---------- */
 
 a {
