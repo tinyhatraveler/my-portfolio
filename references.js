@@ -20,34 +20,21 @@
 
 const references = [
   {
-    name: 'MDN Web Docs',
-    description: `<p>The reference I go back to more than any other for HTML, CSS, and JavaScript. If something isn't behaving the way I expect, this is the first place I check.</p>`
-  },
-  {
-    name: 'Design inspiration',
-    description: `<p>Sites and people I look at for layout and style ideas.</p>`,
+    name: 'Gravity Falls',
+    description: `one of my most beloved shows.
+<p>because i grew up with it and have watched it A LOT i reference it so often I didn't notice i even did until my recent rewatch.</p>`,
     children: [
       {
-        name: 'Brutalist websites',
-        description: `<p>[Add notes here about what you like about this kind of design.]</p>`
+        name: 'I cant reach it',
+        description: `<p>when someone asks if i can pass something > say "I cant reach it" despite being visibly able to reach it</p>
+clip below
+<iframe src="https://www.youtube.com/embed/o2E2wLm_LlY" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+`,
       },
       {
-        name: 'Horse Browser',
-        description: `<p>The nested "trail" navigation this References/Passions page is based on.</p>`
-      }
-    ]
-  },
-  {
-    name: 'Tools',
-    description: `<p>Software and services I use regularly.</p>`,
-    children: [
-      {
-        name: 'VS Code',
-        description: `<p>[Add notes here.]</p>`
-      },
-      {
-        name: 'GitHub Pages',
-        description: `<p>[Add notes here - this is what's hosting this site.]</p>`
+        name: 'Blood sweat tears',
+        description: `Blood sweat tears and other bodily fluids its a quote from <p> S1.E3 "Headhunters"</p>
+<iframe src="https://www.youtube.com/embed/RFD_Zh3C7bg" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
       }
     ]
   }
