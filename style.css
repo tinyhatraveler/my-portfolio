@@ -82,6 +82,13 @@ header p {
   background-color: transparent;
 }
 
+.nav-gap {
+  margin-top: 24px;
+}
+
+.nav-sub {
+  margin-left: 11px;
+}
 
 /* ---------- LINKS ---------- */
 
